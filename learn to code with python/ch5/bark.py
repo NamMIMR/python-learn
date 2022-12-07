@@ -1,3 +1,4 @@
+from typing import *
 # print('Get those dogs ready')
 
 
@@ -15,7 +16,7 @@
 
 # print("OK, We're all done")
 
-def get_bark(weight):
+def get_bark(weight: int) -> str:
     if weight > 20:
         return 'WOOF WOOF'
     else:
