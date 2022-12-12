@@ -6,7 +6,7 @@ from ch1text import text
 def count_words(text: str) -> Tuple[List[str],int]:
     words = text.split()
     total_words = len(words)
-    logging.debug(str(total_words) +' words in total.')
+    logging.info(str(total_words) +' words in total.')
     return words, total_words
 
 def count_sentences(text: str) -> int:
@@ -17,7 +17,7 @@ def count_sentences(text: str) -> int:
         if char in terminal_char:
             total_sentences += 1
 
-    logging.debug(str(total_sentences) + ' sentences in total.')
+    logging.info(str(total_sentences) + ' sentences in total.')
     return total_sentences
 
 def count_syllables(words: List[str]) -> int:
@@ -27,7 +27,7 @@ def count_syllables(words: List[str]) -> int:
         word_count = count_syllables_in_word(word)
         total_syllables += word_count
 
-    logging.debug(str(total_syllables) + ' syllables in total.')
+    logging.info(str(total_syllables) + ' syllables in total.')
 
 
     return total_syllables
@@ -44,7 +44,7 @@ def count_syllables_in_word(word: str) -> int:
         processed_word = word
 
     if len(processed_word) <= 3:
-        count = 1
+        return 1
 
     if processed_word[-1] in 'eE':
         processed_word = processed_word[0:-1]
@@ -127,6 +127,6 @@ def compute_readability(text: str):
 
 
 if __name__ == '__main__':
-    logging.basicConfig(level=logging.WARNING)
+    logging.basicConfig(level=logging.INFO)
     text = text
     compute_readability(text)
