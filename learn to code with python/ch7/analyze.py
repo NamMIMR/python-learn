@@ -1,6 +1,6 @@
 import logging
 from typing import List, Tuple
-from ch1text import text
+import ch1text
 
 
 def count_words(text: str) -> Tuple[List[str],int]:
@@ -102,7 +102,7 @@ def readability_level(score: float) -> Tuple[str,...]:
         readability = '5th grade'
         note = 'Very easy to read. Easily understood by an average 11-year-old student.'
 
-    logging.info('Reading level of {0}: {1}'.format(readability, note))
+    # logging.info('Reading level of {0}: {1}'.format(readability, note))
 
 
     return readability, note
@@ -128,5 +128,5 @@ def compute_readability(text: str):
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO)
-    text = text
+    text = ch1text.text
     compute_readability(text)
