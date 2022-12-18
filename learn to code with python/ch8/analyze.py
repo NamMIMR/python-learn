@@ -1,14 +1,31 @@
 import logging
 from typing import List, Tuple
 
+"""
+The analyze module uses the Flesch-Kincaid readability test to analyze text and
+produce a readability score. This score is then converted into a
+grade-based readability category.
+"""
+
 
 def count_words(text: str) -> Tuple[List[str],int]:
+    """
+    This function counts the number of words in a sting of text 
+    using space as delimeter.
+    """
+
     words = text.split()
     total_words = len(words)
     logging.info(str(total_words) +' words in total.')
     return words, total_words
 
 def count_sentences(text: str) -> int:
+    """
+    This function counts the number of sentences in a string of text 
+    using period, semicolon, question mark and exclamation mark as 
+    terminals.
+    """
+
     total_sentences = 0
     terminal_char = '.;?!'
 
@@ -20,6 +37,11 @@ def count_sentences(text: str) -> int:
     return total_sentences
 
 def count_syllables(words: List[str]) -> int:
+    """
+    This function takes a list of words and returns a total 
+    count of syllables across all words in the list.
+    """
+
     total_syllables = 0
 
     for word in words:
@@ -32,6 +54,12 @@ def count_syllables(words: List[str]) -> int:
     return total_syllables
 
 def count_syllables_in_word(word: str) -> int:
+    """
+    This function takes a word in the form of a string 
+    and returns the number of syllables. Note this function is 
+    a heuristic and may not be 100% accurate.
+    """
+    
     count = 0
 
     endings = '.,;!?:'
@@ -67,14 +95,22 @@ def count_syllables_in_word(word: str) -> int:
 
 # Calculate readability score.
 def readability_formula(total_words: int, total_sentences: int, total_syllables: int) -> float:
+    """
+    This function calculate the readability score using the 
+    Flesch-Kincaid readability formula by accept the number 
+    of words, sentences, syllables in the same text of string,
+    return the score of the readability.
+    """
     score = (206.835 - 1.015 * (total_words / total_sentences) - 84.6 * (total_syllables / total_words))
     return score
 
 # Get the readability level by given score.
 def readability_level(score: float) -> Tuple[str,...]:
     '''
-    Return readability level and description of the level.
+    This function takes a Flesch-Kincaid score and prints the 
+    corresponding reading level.
     '''
+
     logging.debug(score)
     readability = ''
     note = ''
@@ -107,6 +143,11 @@ def readability_level(score: float) -> Tuple[str,...]:
     return readability, note
 
 def compute_readability(text: str):
+    """
+    This function takes a text string of any length and prints out a 
+    grade-based readability score.
+    """
+
     logging.debug(text)
 
     # Init all local variable we need.
