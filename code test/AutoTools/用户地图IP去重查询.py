@@ -1,7 +1,7 @@
 import pandas as pd
 from pathlib import WindowsPath
 import logging
-from playwright import sync_api
+from playwright.sync_api import sync_playwright, jPlaywright
 
 
 def get_filelist(filepath: str) -> list[WindowsPath]:
