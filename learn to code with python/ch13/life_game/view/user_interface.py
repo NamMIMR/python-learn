@@ -38,6 +38,7 @@ def setup_windows():
     option.grid(row=1, column=2, padx=20)
     clear_button.grid(row=1, column=3, sticky=E, padx=20, pady=20)
 
+    return grid_view
 
 if __name__ == "__main__":
     setup_windows()
