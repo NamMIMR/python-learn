@@ -26,13 +26,19 @@ def setup_windows():
     option = OptionMenu(root, choice, 'Choose a Pattern', 'glider', 'glider gun', 'random')
     option.config(width = 12)
 
-    grid_view.pack()
-    start_button.pack()
-    pause_button.pack()
-    clear_button.pack()
-    option.pack()
+    # grid_view.pack()
+    # start_button.pack()
+    # pause_button.pack()
+    # clear_button.pack()
+    # option.pack()
+
+    grid_view.grid(row=0, columnspan=4, padx=20, pady=20)
+    start_button.grid(row=1, column=0, sticky=W, padx=20, pady=20)
+    pause_button.grid(row=1, column=1, sticky=W, padx=20, pady=20)
+    option.grid(row=1, column=2, padx=20)
+    clear_button.grid(row=1, column=3, sticky=E, padx=20, pady=20)
+
 
 if __name__ == "__main__":
-
     setup_windows()
     mainloop()
