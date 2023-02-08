@@ -1,16 +1,18 @@
 from tkinter import *
-import model.setup
+import sys
+sys.path.append('..')
+from model import setup_model
 
 cell_size = 5
 
-def setup():
+def setup_windows():
     global root, grid_view, cell_size, start_button, clear_button, choice, pause_button
 
     root = Tk()
     root.title('The Game of Life')
 
-    grid_view = Canvas(root, width = setup.width*cell_size,
-                    height = setup.height*cell_size,
+    grid_view = Canvas(root, width = setup_model.width*cell_size,
+                    height = setup_model.height*cell_size,
                     borderwidth = 0,
                     highlightthickness = 0,
                     bg = 'white')
@@ -31,5 +33,6 @@ def setup():
     option.pack()
 
 if __name__ == "__main__":
-    setup()
+
+    setup_windows()
     mainloop()
