@@ -1,0 +1,9 @@
+{
+    "model_config": {
+        "height": 100,
+        "width": 100
+    },
+    "grid_config": {
+        "cell_size": 5
+    }    
+}

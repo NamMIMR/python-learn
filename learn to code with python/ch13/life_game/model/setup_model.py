@@ -30,7 +30,7 @@ def next_gen():
                 if neighbor == 2 or neighbor == 3:
                     cell = 1
             next_grid_model[i][j] = cell
-            print('New value is', next_grid_model[i][j])
+            # print('New value is', next_grid_model[i][j])
     
     grid_model, next_grid_model = next_grid_model, grid_model
 
