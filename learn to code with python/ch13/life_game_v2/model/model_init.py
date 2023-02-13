@@ -6,7 +6,7 @@ from patterns import *
 # from life_game_v2.model import patterns
 
 
-def setup_model(height: int, width: int, pattern: str = 'default') -> List[List[int]] or None:
+def setup_model(height: int, width: int, pattern: str = 'default'):
     pass
     return None
 
