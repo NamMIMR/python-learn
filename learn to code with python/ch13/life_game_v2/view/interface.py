@@ -1,5 +1,8 @@
 from tkinter import *
-from ..model import GridModel
+# from ..model import GridModel
+import sys
+sys.path.append('../')
+from model.model_patterns import GridModel
 
 
 class BaseWindow:
@@ -38,4 +41,5 @@ class BaseWindow:
 if __name__ == "__main__":
     model = GridModel(100, 100)
     grid_view = BaseWindow(100, model)
+    grid_view.setup_interface()
     mainloop()
