@@ -1,4 +1,5 @@
 from tkinter import mainloop
+from model import model_init
 import json
 
 def import_config():
@@ -18,6 +19,7 @@ def main():
     width = config['model_config']['width']
     cell_size = config['grid_config']['cell_size']
 
+    model = model_init.setup_model(height, width)
 
 if __name__ == "__main__":
-    # mainloop()
+    mainloop()

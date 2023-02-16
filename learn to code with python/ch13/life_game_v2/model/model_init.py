@@ -1,5 +1,5 @@
 from typing import List
-from patterns import *
+from model_patterns import *
 
 
 def setup_model(height: int, width: int, pattern: str = 'default') -> GridModel:
