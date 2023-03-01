@@ -6,4 +6,7 @@
 
     "editor.fontFamily": "monospace",
     "editor.fontLigatures": true,
+    "cSpell.ignoreWords": [
+        "grid_model"
+    ],
 }
