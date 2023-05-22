@@ -8,7 +8,7 @@ IS_RUNNING = False
 def setup():
     global root, grid_view, CELL_SIZE, start_button, clear_button, choice
 
-    root = TK()
+    root = Tk()
     root.title('The Game of Life')
 
     grid_view = Canvas(root, width=model.WIDTH*CELL_SIZE,
@@ -49,7 +49,7 @@ def option_handler(event):
     elif selection == 'RANDOM':
         model.randomize(model.GRID_MODEL, model.WIDTH, model.HEIGHT)
 
-    udpate()
+    update()
 
 
 def start_handler(event):
