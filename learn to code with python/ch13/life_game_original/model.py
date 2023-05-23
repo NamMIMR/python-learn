@@ -1,11 +1,12 @@
 import random
+from typing import Any
 
 
 HEIGHT = 100
 WIDTH = 100
 
-GRID_MODEL = [0] * HEIGHT
-NEXT_GRID_MODEL = [0] * HEIGHT
+GRID_MODEL: Any = [0] * HEIGHT
+NEXT_GRID_MODEL: Any = [0] * HEIGHT
 for i in range(HEIGHT):
     GRID_MODEL[i] = [0] * WIDTH
     NEXT_GRID_MODEL[i] = [1] * WIDTH
@@ -77,7 +78,7 @@ def load_pattern(pattern, x_offset=0, y_offset=0):
     for i in range(0, HEIGHT):
         for j in range(0, WIDTH):
             GRID_MODEL[i][j] = 0
-    
+
     j = y_offset
 
     for row in pattern:
@@ -90,4 +91,3 @@ def load_pattern(pattern, x_offset=0, y_offset=0):
 
 if __name__ == "__main__":
     next_gen()
-    

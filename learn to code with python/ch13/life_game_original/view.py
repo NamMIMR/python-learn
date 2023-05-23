@@ -16,7 +16,7 @@ def setup():
                             borderwidth=0,
                             highlightthickness=0,
                             bg='white')
-    
+
     start_button = Button(root, text='Start', width=12)
     clear_button = Button(root, text='Clear', width=12)
 
@@ -70,7 +70,7 @@ def clear_handler(event):
     for i in range(0, model.HEIGHT):
         for j in range(0, model.WIDTH):
             model.GRID_MODEL[i][j] = 0
-    
+
     start_button.configure(text='Start')
     update()
 
@@ -97,7 +97,7 @@ def update():
         for j in range(0, model.WIDTH):
             if model.GRID_MODEL[i][j] == 1:
                 draw_cell(i, j, 'black')
-    
+
     if IS_RUNNING:
         root.after(100, update)
 
@@ -108,7 +108,7 @@ def draw_cell(row, col, color):
         outline = 'gray'
     else:
         outline = 'white'
-    
+
     grid_view.create_rectangle(row*CELL_SIZE,
                                 col*CELL_SIZE,
                                 row*CELL_SIZE+CELL_SIZE,
@@ -116,7 +116,7 @@ def draw_cell(row, col, color):
                                 fill=color, outline=outline)
 
 
-if __name__ == "__main__": 
+if __name__ == "__main__":
     setup()
     update()
     mainloop()
