@@ -1,4 +1,4 @@
-from tkinter import Grid, mainloop, Tk, OptionMenu, Button, Canvas, StringVar, W, E, ALL
+from tkinter import *
 import model
 
 

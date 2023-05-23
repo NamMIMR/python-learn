@@ -37,8 +37,9 @@ class GridModel:
                 cell = 0
                 count = self.count_neighbor(i, j)
 
-                if self.grid_model[i][j] == 0 and count == 3:
-                    cell = 1
+                if self.grid_model[i][j] == 0:
+                    if count == 3:
+                        cell = 1
                 elif self.grid_model[i][j] == 1:
                     if count == 2 or count == 3:
                         cell = 1
@@ -504,18 +505,20 @@ class GridModel:
                     0,
                 ],
             ]
+
+        self.initial_model()
+        if pattern != "RANDOM":
+            j = y_offset
+            for row in pattern_model:
+                i = x_offset
+                for value in row:
+                    self.grid_model[i][j] = value
+                    i += 1
+                j += 1
         else:
             for i in range(0, self.height):
                 for j in range(0, self.width):
-                    pattern_model[i][j] = random.randint(0, 1)
-        self.initial_model()
-        j = y_offset
-        for row in pattern_model:
-            i = x_offset
-            for value in row:
-                self.grid_model[i][j] = value
-                i += 1
-            j += 1
+                    self.grid_model[i][j] = random.randint(0, 1)
 
 
 if __name__ == "__main__":
@@ -524,3 +527,6 @@ if __name__ == "__main__":
     print(grid_model.height)
     print(grid_model.width)
     grid_model.load_pattern("RANDOM")
+    # print(grid_model.grid_model)
+    grid_model.next_gen()
+    # print(grid_model.grid_model)
